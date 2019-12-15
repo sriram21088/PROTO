@@ -3,20 +3,20 @@ import Name from './name';
  
 
 export default class Row extends React.Component{
+
+    constructor(s){
+        super(s)
+        this.data =this.props.data;
+    }
 render(){
 
     return (   <div className="tableRow">
-                    <Name  value={"Sam"} type="_input"></Name>
-                    <Name  value={"one"}  options = {[{value:"one",name:"one"},
-                                        {value:"two",name:"two"}]} 
-                            type="_select">
+                     {this.data.map((data,i)=>{
 
-                    </Name>
-                    <Name   value={"Spanish"}  options = {[{value:"Spanish",name:"Spanish"},
-                                             {value:"English",name:"English"}]} 
-                                type="_select">
-                    
-                    </Name>
+
+                        return <Name  key= {i} value={data.value} type={data.type} options={data.options} />
+                
+                     })}
                </div>
     )
 }
