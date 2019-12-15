@@ -3,13 +3,14 @@ import Row from './row';
 
 
 export default class Body extends React.Component{
+ 
 
 render(){
-        return    (<>
+        return    (<div className="tableBody">
                         <Row/>
                         <Row/>
                         <Row/>
-                    </>
+                    </div>
 
         )
 

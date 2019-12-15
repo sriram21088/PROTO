@@ -1,5 +1,6 @@
 import React from "react";
 import C from './chunks';
+import GridContext from './GridContext';
 
 export default class Name extends React.Component{
 
@@ -12,12 +13,18 @@ export default class Name extends React.Component{
         }
         this.ref = React.createRef();
         this.onDbl = this.onDbl.bind(this);
+        this.click = this.click.bind(this);
         this.select = this.select.bind(this);
     }
-    onDbl(){
+    click(e){
+        e.stopPropagation();
+    }
+    onDbl(e){
           this.setState((s,p)=>{
               return {isActive:!s.isActive}
           })
+          e.preventDefault();
+          e.stopPropagation();
     }
     select(e){
         this.setState((s,p)=>{
@@ -27,7 +34,7 @@ export default class Name extends React.Component{
                     })
         })
     }
-respEl(){
+respEl(){ 
     switch(this.props.type){
             case "_input":
                     return <C.ChunkInput 
@@ -47,15 +54,32 @@ respEl(){
    
 }
 componentDidMount(){
-    this.ref.current.addEventListener("dblclick",this.onDbl)
+    this.ref.current.addEventListener("dblclick",this.onDbl);
+    this.ref.current.addEventListener("click",this.click);
+}
+componentDidUpdate(p,s){
+    if(s.isActive){
+       // this.props._current(this);
+    }
 }
 
 render(){
-        const  el = this.state.isActive?this.respEl():this.state.value;
-           return <div ref= {this.ref} className="row">
-                              { el}                
-               
-               </div>
+    const  el = this.state.isActive?this.respEl():this.state.value;
+    return  <GridContext.Consumer>
+               {(value)=>{
+                     if(this.state.isActive){
+                        value(this);
+                     }
+                    return <div ref= {this.ref} className="row">
+                                 { el}                
+
+                    </div>
+               }}
+       
+
+     </GridContext.Consumer>
+        
+           
   
     
 }

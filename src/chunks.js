@@ -4,7 +4,7 @@ import React from "react";
   function ChunkInput(props){
  
 return (
-    <input 
+    <input autoFocus
             value={props.value}  
             onChange = {props.cFn}  
             onBlur={props.bFn}>
@@ -18,7 +18,7 @@ return (
 function ChunkSelect(props){
  
     return (
-        <select 
+        <select autoFocus
                 value={props.value}  
                 onChange = {props.cFn}  
                 onBlur={props.bFn}>
