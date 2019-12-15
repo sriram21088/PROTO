@@ -7,18 +7,20 @@ export default class Name extends React.Component{
 
     constructor(p){
         super(p);
-        this.state =  {
-            isActive:false,
-            value:this.props.value
-        }
         this.ref = React.createRef();
         this.onDbl = this.onDbl.bind(this);
         this.click = this.click.bind(this);
         this.select = this.select.bind(this);
+        
+        this.state =  {
+            isActive:false,
+            value: this.props.value || "No data"
+        }
     }
     click(e){
         e.stopPropagation();
     }
+     
     onDbl(e){
           this.setState((s,p)=>{
               return {isActive:!s.isActive}
@@ -44,7 +46,6 @@ respEl(){
                     </C.ChunkInput>;
              case "_select":
                     return <C.ChunkSelect
-                    value={this.state.value}  
                     cFn = {(e)=>this.setState({value:e.target.value})}  
                     bFn={(e)=>this.select(e.target.value)}
                     options={this.props.options}>

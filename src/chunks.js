@@ -19,11 +19,15 @@ function ChunkSelect(props){
  
     return (
         <select autoFocus
-                value={props.value}  
+                defaultValue={props.value}
                 onChange = {props.cFn}  
                 onBlur={props.bFn}>
                     {
-props.options.map(opt=><option key={opt.value}   value={opt.value}>{opt.name}</option>)
+                        props.options.map((opt,i)=>
+                                    <option key={opt.value} 
+                                            value={opt.value}>
+                                                {opt.name}
+                        </option>)
                     }
 
 
@@ -33,5 +37,6 @@ props.options.map(opt=><option key={opt.value}   value={opt.value}>{opt.name}</o
     
     }
 
+     
 
 export default {ChunkInput,ChunkSelect };

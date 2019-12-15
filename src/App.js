@@ -10,8 +10,6 @@ class App extends React.Component {
    }
  componentDidMount(){
    document.body.addEventListener("click",(e)=>{
-     console.clear();
-     console.log("main...");
       if(this.ref.current){
         this.ref.current.setState({
           isActive:false
