@@ -5,7 +5,13 @@ import Row from './row';
 export default class Body extends React.Component{
 
 render(){
-        return    <Row/>
+        return    (<>
+                        <Row/>
+                        <Row/>
+                        <Row/>
+                    </>
+
+        )
 
 }
 

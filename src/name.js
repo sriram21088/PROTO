@@ -1,4 +1,5 @@
 import React from "react";
+import C from './chunks';
 
 export default class Name extends React.Component{
 
@@ -27,12 +28,23 @@ export default class Name extends React.Component{
         })
     }
 respEl(){
-    return <input 
+    switch(this.props.type){
+            case "_input":
+                    return <C.ChunkInput 
                     value={this.state.value}  
-                    onChange = {(e)=>this.setState({value:e.target.value})}  
-                    onBlur={(e)=>this.select(e.target.value)}>
+                    cFn = {(e)=>this.setState({value:e.target.value})}  
+                    bFn={(e)=>this.select(e.target.value)}>
+                    </C.ChunkInput>;
+             case "_select":
+                    return <C.ChunkSelect
+                    value={this.state.value}  
+                    cFn = {(e)=>this.setState({value:e.target.value})}  
+                    bFn={(e)=>this.select(e.target.value)}
+                    options={this.props.options}>
+                    </C.ChunkSelect>;        
 
-             </input>;
+    }
+   
 }
 componentDidMount(){
     this.ref.current.addEventListener("dblclick",this.onDbl)

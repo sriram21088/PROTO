@@ -11,3 +11,21 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+.row{
+  display: inline-block;
+  border-right: 1px solid;
+  min-width: 120px;
+  max-width: 120px;
+  text-align: center;
+}
+
+input,select{
+  min-width: 120px !important ;
+  max-width: 120px !important;
+}
+
+.tableRow:nth-child(2n) {
+  background-color: #e9fae9;
+}
