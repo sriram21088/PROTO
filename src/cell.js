@@ -2,7 +2,7 @@ import React from "react";
 import C from './chunks';
 import GridContext from './GridContext';
 
-export default class Name extends React.Component{
+export default class Cell extends React.Component{
 
 
     constructor(p){
