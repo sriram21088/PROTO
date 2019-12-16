@@ -1,6 +1,7 @@
 {"data": [
     [
         {"value" : "S1","type":"_input"},
+        {"value" : "s","type":"_sn"},
         {"value":"one","type":"_select", "options":[{"value":"one","name":"one"},{"value":"two","name":"two"}]},
         {"value":"Spanish","type":"_select", "options":[{"value":"Spanish","name":"Spanish"},{"value":"English","name":"English"}]}
       

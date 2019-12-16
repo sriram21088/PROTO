@@ -11,10 +11,22 @@ export default class Name extends React.Component{
         this.onDbl = this.onDbl.bind(this);
         this.click = this.click.bind(this);
         this.select = this.select.bind(this);
+        this.secondaryEl = this.secondaryEl.bind(this);
         
         this.state =  {
             isActive:false,
             value: this.props.value || "No data"
+        }
+    }
+    secondaryEl(){
+        if(this.props.type=="_sn"){
+           return  ( <C.ChunkSelect
+                            value = {this.state.value||"s"}
+                            cFn = {(e)=>this.setState({value:e.target.value})}  
+                            bFn={(e)=>this.select(e.target.value)}
+                            options={[{value:"s",name:"yes"},{value:"n",name:"no"}]}>
+                    </C.ChunkSelect>
+             )
         }
     }
     click(e){
@@ -49,7 +61,10 @@ respEl(){
                     cFn = {(e)=>this.setState({value:e.target.value})}  
                     bFn={(e)=>this.select(e.target.value)}
                     options={this.props.options}>
-                    </C.ChunkSelect>;        
+                    </C.ChunkSelect>;
+            case "_sn":
+                return   <C.ChunkYesNo value={this.state.value ||"s"}></C.ChunkYesNo>
+
 
     }
    
@@ -65,7 +80,24 @@ componentDidUpdate(p,s){
 }
 
 render(){
-    const  el = this.state.isActive?this.respEl():this.state.value;
+       let el;
+       if(this.state.isActive){
+                if(this.props.type== "_sn"){
+                      el = this.secondaryEl();
+                }else{
+                    el  =  this.respEl();
+                }
+
+                
+       }else{
+        if(this.props.type =="_sn"){
+              el =  this.respEl();
+        }else{
+            el  = this.state.value;
+        }
+              
+    }
+    
     return  <GridContext.Consumer>
                {(value)=>{
                      if(this.state.isActive){

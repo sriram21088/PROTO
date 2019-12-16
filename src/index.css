@@ -27,6 +27,11 @@ input,select{
   max-width: 120px !important;
 }
 
+
+.row img{
+max-width:15px;
+max-height: 15px;
+}
 .tableRow:nth-child(2n) {
   background-color: #e9fae9;
 }

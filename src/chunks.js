@@ -1,6 +1,6 @@
 import React from "react";
-
-
+import Yes from './tick.png';
+import No from './cancel.png';
   function ChunkInput(props){
  
 return (
@@ -37,6 +37,17 @@ function ChunkSelect(props){
     
     }
 
+
+    function ChunkYesNo(props){
+        console.log("props.;;;;;",props.value)
+             const url=  props.value =="s"?Yes:No;
+                     return(<img src={url}/>
+
+                     
+       )
+
+    }
+
      
 
-export default {ChunkInput,ChunkSelect };
+export default {ChunkInput,ChunkSelect,ChunkYesNo };
