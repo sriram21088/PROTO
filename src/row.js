@@ -1,5 +1,5 @@
 import React from 'react';
-import Name from './name';
+import Cell from './cell';
 
  
 
@@ -15,7 +15,7 @@ render(){
                      {this.data.map((data,i)=>{
 
 
-                        return <Name  key= {i} value={data.value} type={data.type} options={data.options} />
+                        return <Cell  key= {i} value={data.value} type={data.type} options={data.options} />
                 
                      })}
                </div>
