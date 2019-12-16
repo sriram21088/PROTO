@@ -20,6 +20,10 @@ code {
   min-width: 120px;
   max-width: 120px;
   text-align: center;
+  min-height: 50px;
+  padding: 0px;
+  vertical-align: middle;
+  line-height: 50px;
 }
 
 input,select{
