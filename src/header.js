@@ -10,7 +10,8 @@ this.data   =
     {"value" : "NAME","type":"_header"},
     {"value" : "OPTED","type":"_header"},
     {"value":"NUMBER OF ELEMENTS","type":"_header"},
-    {"value":"LANGUAGE","type":"_header" }
+    {"value":"LANGUAGE","type":"_header" },
+    {"value":"RATING","type":"_header" }
   
   
   

@@ -1,6 +1,7 @@
 import React from "react";
 import Yes from './tick.png';
 import No from './cancel.png';
+import Star from './star.png'
   function ChunkInput(props){
  
 return (
@@ -47,6 +48,15 @@ function ChunkSelect(props){
 
     }
 
+    function ChunkRating(props){
+         const val  =props.value?Number(props.value):1;
+          let  i =0,arr = [];
+
+          for(i=0;i<val;i++){
+                    arr.push(<img src={Star} key={i}/>);
+          }
+         return(arr)
+    }   
      
 
-export default {ChunkInput,ChunkSelect,ChunkYesNo };
+export default {ChunkInput,ChunkSelect,ChunkYesNo,ChunkRating };

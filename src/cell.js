@@ -27,6 +27,12 @@ export default class Cell extends React.Component{
                             options={[{value:"s",name:"yes"},{value:"n",name:"no"}]}>
                     </C.ChunkSelect>
              )
+        }else if(this.props.type == "_rating"){
+                        return<C.ChunkInput 
+                                    value={this.state.value}  
+                                    cFn = {(e)=>this.setState({value:e.target.value})}  
+                                    bFn={(e)=>this.select(e.target.value)}>
+                        </C.ChunkInput>
         }
     }
     click(e){
@@ -64,6 +70,8 @@ respEl(){
                     </C.ChunkSelect>;
             case "_sn":
                 return   <C.ChunkYesNo value={this.state.value ||"s"}></C.ChunkYesNo>
+                case "_rating":
+                        return (<C.ChunkRating value={this.state.value ||"1"}></C.ChunkRating>)
 
 
     }
@@ -86,7 +94,7 @@ componentDidUpdate(p,s){
 render(){
        let el;
        if(this.state.isActive){
-                if(this.props.type== "_sn"){
+                if(this.props.type== "_sn" ||this.props.type== "_rating"){
                       el = this.secondaryEl();
                 }else{
                     el  =  this.respEl();
@@ -94,7 +102,7 @@ render(){
 
                 
        }else{
-        if(this.props.type =="_sn"){
+        if(this.props.type =="_sn" || this.props.type == "_rating"){
               el =  this.respEl();
         }else{
             el  = this.state.value;
