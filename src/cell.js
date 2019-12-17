@@ -107,7 +107,7 @@ render(){
                      if(this.state.isActive){
                         value(this);
                      }
-                    return <div ref= {this.ref} className= {this.props.header?"row header":"row"} >
+                    return <div ref= {this.ref} className= {this.props.header?"cell header":"cell"} >
                                  { el}                
 
                     </div>

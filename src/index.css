@@ -14,7 +14,7 @@ code {
 }
 
 
-.row{
+.cell{
   display: inline-block;
   min-width: 120px;
   max-width: 120px;
@@ -33,7 +33,7 @@ input,select{
 }
 
 
-.row img{
+.cell img{
 max-width:15px;
 max-height: 15px;
 }
@@ -42,7 +42,7 @@ max-height: 15px;
   display: inline-block;
 }
 
-.row.header {
+.cell.header {
   background-color: #dbeded;
     line-height: 15px;
     vertical-align: middle;
