@@ -7,10 +7,10 @@ window.R  = React;
 export default  class Grid extends React.Component{
 
     render(){
-            return (<> 
+            return (< div className  = "grid"> 
                     <Header></Header> 
                     <Body></Body>
-                    </>
+                    </div>
                    )
 
     }
