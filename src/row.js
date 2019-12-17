@@ -13,9 +13,10 @@ render(){
 
     return (   <div className="tableRow">
                      {this.data.map((data,i)=>{
-
-
-                        return <Cell  key= {i} value={data.value} type={data.type} options={data.options} />
+                              return <Cell  key= {i} 
+                                            value={data.value} 
+                                            type={data.type} 
+                                            options={data.options} />
                 
                      })}
                </div>

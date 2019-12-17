@@ -70,8 +70,12 @@ respEl(){
    
 }
 componentDidMount(){
-    this.ref.current.addEventListener("dblclick",this.onDbl);
-    this.ref.current.addEventListener("click",this.click);
+    if(!this.props.header){
+        this.ref.current.addEventListener("dblclick",this.onDbl);
+        this.ref.current.addEventListener("click",this.click);
+    }
+
+    
 }
 componentDidUpdate(p,s){
     if(s.isActive){
@@ -103,7 +107,7 @@ render(){
                      if(this.state.isActive){
                         value(this);
                      }
-                    return <div ref= {this.ref} className="row">
+                    return <div ref= {this.ref} className= {this.props.header?"row header":"row"} >
                                  { el}                
 
                     </div>

@@ -1,12 +1,17 @@
 import React from 'react';
  import Body from './body';
+ import Header from "./header";
 window.R  = React;
 
 
 export default  class Grid extends React.Component{
 
     render(){
-            return  <Body></Body>
+            return (<> 
+                    <Header></Header> 
+                    <Body></Body>
+                    </>
+                   )
 
     }
 }

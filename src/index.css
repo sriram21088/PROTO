@@ -16,7 +16,6 @@ code {
 
 .row{
   display: inline-block;
-  border-right: 1px solid;
   min-width: 120px;
   max-width: 120px;
   text-align: center;
@@ -24,6 +23,8 @@ code {
   padding: 0px;
   vertical-align: middle;
   line-height: 50px;
+  border-bottom: 1px solid #bab9b9;
+
 }
 
 input,select{
@@ -38,4 +39,12 @@ max-height: 15px;
 }
 .tableRow:nth-child(2n) {
   background-color: #e9fae9;
+  display: inline-block;
+}
+
+.row.header {
+  background-color: #dbeded;
+    line-height: 15px;
+    vertical-align: middle;
+    padding-top: 15px;
 }
