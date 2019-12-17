@@ -29,6 +29,8 @@ export default class Cell extends React.Component{
              )
         }else if(this.props.type == "_rating"){
                         return<C.ChunkInput 
+                                    type = "number"
+                                    max = {5}
                                     value={this.state.value}  
                                     cFn = {(e)=>this.setState({value:e.target.value})}  
                                     bFn={(e)=>this.select(e.target.value)}>

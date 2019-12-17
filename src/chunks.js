@@ -6,6 +6,8 @@ import Star from './star.png'
  
 return (
     <input autoFocus
+            type = {props.type}
+            max = {props.max}
             value={props.value}  
             onChange = {props.cFn}  
             onBlur={props.bFn}>
