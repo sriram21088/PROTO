@@ -39,7 +39,6 @@ function ChunkSelect(props){
 
 
     function ChunkYesNo(props){
-        console.log("props.;;;;;",props.value)
              const url=  props.value =="s"?Yes:No;
                      return(<img src={url}/>
 
