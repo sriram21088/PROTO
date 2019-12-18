@@ -2,6 +2,8 @@ import React from "react";
 import Yes from './tick.png';
 import No from './cancel.png';
 import Star from './star.png'
+import  Up from './up.png';
+import Down from './down.png';
   function ChunkInput(props){
  
 return (
@@ -42,8 +44,8 @@ function ChunkSelect(props){
 
 
     function ChunkYesNo(props){
-             const url=  props.value =="s"?Yes:No;
-                     return(<img src={url}/>
+        const url=  props.value =="s"?props.type=="_thumb"?Up:Yes:props.type =="_thumb"?Down: No;
+         return(<img src={url}/>
 
                      
        )

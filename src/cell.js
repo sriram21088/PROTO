@@ -12,14 +12,14 @@ export default class Cell extends React.Component{
         this.click = this.click.bind(this);
         this.select = this.select.bind(this);
         this.secondaryEl = this.secondaryEl.bind(this);
-        
+        this.secondaryBuffer =  ["_sn","_thumb","_rating"];
         this.state =  {
             isActive:false,
             value: this.props.value || "No data"
         }
     }
     secondaryEl(){
-        if(this.props.type=="_sn"){
+        if(this.props.type=="_sn" || this.props.type =="_thumb"){
            return  ( <C.ChunkSelect
                             value = {this.state.value||"s"}
                             cFn = {(e)=>this.setState({value:e.target.value})}  
@@ -70,9 +70,9 @@ respEl(){
                     bFn={(e)=>this.select(e.target.value)}
                     options={this.props.options}>
                     </C.ChunkSelect>;
-            case "_sn":
-                return   <C.ChunkYesNo value={this.state.value ||"s"}></C.ChunkYesNo>
-                case "_rating":
+            case   "_sn" :case "_thumb":
+                return   <C.ChunkYesNo type = {this.props.type} value={this.state.value ||"s"}></C.ChunkYesNo>
+                case "_rating" :
                         return (<C.ChunkRating value={this.state.value ||"1"}></C.ChunkRating>)
 
 
@@ -96,7 +96,8 @@ componentDidUpdate(p,s){
 render(){
        let el;
        if(this.state.isActive){
-                if(this.props.type== "_sn" ||this.props.type== "_rating"){
+           debugger;
+                if(this.secondaryBuffer.indexOf(this.props.type) !== -1){
                       el = this.secondaryEl();
                 }else{
                     el  =  this.respEl();
@@ -104,7 +105,7 @@ render(){
 
                 
        }else{
-        if(this.props.type =="_sn" || this.props.type == "_rating"){
+        if(this.props.type =="_sn" || this.props.type == "_rating" || this.props.type== "_thumb"){
               el =  this.respEl();
         }else{
             el  = this.state.value;
