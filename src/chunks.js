@@ -59,6 +59,7 @@ function ChunkSelect(props){
           for(i=0;i<val;i++){
                     arr.push(<img src={Star} key={i}/>);
           }
+          (arr.length == 0) && (arr= "NO RATING")
          return(arr)
     }   
      

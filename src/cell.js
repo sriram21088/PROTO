@@ -96,7 +96,6 @@ componentDidUpdate(p,s){
 render(){
        let el;
        if(this.state.isActive){
-           debugger;
                 if(this.secondaryBuffer.indexOf(this.props.type) !== -1){
                       el = this.secondaryEl();
                 }else{
