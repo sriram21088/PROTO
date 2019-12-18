@@ -11,7 +11,12 @@ this.data   =
     {"value" : "OPTED","type":"_header"},
     {"value":"NUMBER OF ELEMENTS","type":"_header"},
     {"value":"LANGUAGE","type":"_header" },
-    {"value":"RATING","type":"_header" }
+    {"value":"RATING","type":"_header" },
+    {"value" : "SECONDARY NAME","type":"_header"},
+    {"value" : "BOUGHT","type":"_header"},
+    {"value":"RELATIVE","type":"_header"},
+    {"value":"SECONDRY LANGUAGE","type":"_header" },
+    {"value":"FEEDBACK","type":"_header" }
   
   
   
